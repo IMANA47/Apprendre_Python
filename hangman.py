@@ -5,6 +5,7 @@ from mots import mots
 
 #declaration des variable
 score = 0
+nom_joueur = ""
 
 def choisirVotreMots(mots):
     mot = random.choice(mots)
@@ -21,7 +22,23 @@ def jouer_de_nouveau():
         print("Merci d'avoir jouer et bye!")
         exit()
 
+#Fonction pour recuperer le nom du jouer
+def recuperer_nom_jouer():
+    nom_joueur = input("Merci de saisir votre nom : ")
+    nom_joueur = nom_joueur.capitalize() # Pour mettre la premier lettre en majuscule
+    if not nom_joueur.isalpha() or len(nom_joueur) < 5: #Pour verifier si le user a mis des lettre et la taille est > 5
+         print("Le nom que vous avez saisi est invalide")
+         return  recuperer_nom_jouer()
+    else:
+        return nom_joueur
+
+
 def hangman():
+    global nom_joueur
+
+    if nom_joueur == "":
+        nom_joueur = recuperer_nom_jouer()
+
     global score
     mot_original = choisirVotreMots(mots)
     #mettre les mots majuscule
@@ -56,9 +73,9 @@ def hangman():
         #appel de la fonction pour essayer a nouveau
         jouer_de_nouveau()
     else:
-        print("Le mot à deviner est", mot, "vous avez gagné ☺️")
+        print(nom_joueur,"le mot à deviner est", mot, "vous avez gagné ☺️")
         score += 10
-        print("Votre score est de : ", score,"points")
+        print(nom_joueur,"votre score est de : ", score,"points")
         #appel de la fonction jouer a nouveau pour reasseyer
         jouer_de_nouveau()
 
