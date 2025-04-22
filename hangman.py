@@ -7,6 +7,17 @@ def choisirVotreMots(mots):
     mot = random.choice(mots)
     return mot
 
+#la fonction pour donner la possibilite de rejouer
+def jouer_de_nouveau():
+    jouer_jeu = input("Souhaitez vous continuer à jouer? (O = oui, N = Non)")
+    while jouer_jeu not in {"O","o","N","n"}:
+        jouer_jeu = input("Souhaitez vous continuer à jouer? (O = oui, N = Non)")
+    if jouer_jeu == "O" or jouer_jeu == "o":
+        hangman()
+    elif jouer_jeu == "N" or jouer_jeu == "n":
+        print("Merci d'avoir jouer et bye!")
+        exit()
+
 def hangman():
     mot_original = choisirVotreMots(mots)
     #mettre les mots majuscule
@@ -38,8 +49,12 @@ def hangman():
             print("Votre choix est invalide, merci de saisir une lettre!")
     if essai == 0:
         print("🥴 Dommage vous avez perdu, il ne vous reste aucun essai!")
+        #appel de la fonction pour essayer a nouveau
+        jouer_de_nouveau()
     else:
         print("Le mot à deviner est", mot, "vous avez gagné ☺️")
+        #appel de la fonction jouer a nouveau pour reasseyer
+        jouer_de_nouveau()
 
 
 
