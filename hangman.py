@@ -3,6 +3,9 @@ import string
 
 from mots import mots
 
+#declaration des variable
+score = 0
+
 def choisirVotreMots(mots):
     mot = random.choice(mots)
     return mot
@@ -19,6 +22,7 @@ def jouer_de_nouveau():
         exit()
 
 def hangman():
+    global score
     mot_original = choisirVotreMots(mots)
     #mettre les mots majuscule
     mot = mot_original.upper()
@@ -53,9 +57,9 @@ def hangman():
         jouer_de_nouveau()
     else:
         print("Le mot à deviner est", mot, "vous avez gagné ☺️")
+        score += 10
+        print("Votre score est de : ", score,"points")
         #appel de la fonction jouer a nouveau pour reasseyer
         jouer_de_nouveau()
-
-
 
 hangman()
