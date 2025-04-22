@@ -1,1 +1,0 @@
-mots =['ecole','voiture','maison','classe','professeur','eglise','divine','est']
