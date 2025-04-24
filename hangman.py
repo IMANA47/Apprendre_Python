@@ -1,13 +1,12 @@
 import random
 import string
-
 from mots import mots
 
 #declaration des variable
 score = 0
 nom_joueur = ""
 
-def choisirVotreMots(mots):
+def choisir_votre_mots(mots):
     mot = random.choice(mots)
     return mot
 
@@ -26,7 +25,7 @@ def jouer_de_nouveau():
 def recuperer_nom_jouer():
     nom_joueur = input("Merci de saisir votre nom : ")
     nom_joueur = nom_joueur.capitalize() # Pour mettre la premier lettre en majuscule
-    if not nom_joueur.isalpha() or len(nom_joueur) < 5: #Pour verifier si le user a mis des lettre et la taille est > 5
+    if not nom_joueur.isalpha() or len(nom_joueur) < 5: #Pour verifier si le user a mis des lettre et la taille est < 5
          print("Le nom que vous avez saisi est invalide")
          return  recuperer_nom_jouer()
     else:
@@ -40,7 +39,7 @@ def hangman():
         nom_joueur = recuperer_nom_jouer()
 
     global score
-    mot_original = choisirVotreMots(mots)
+    mot_original = choisir_votre_mots(mots)
     #mettre les mots majuscule
     mot = mot_original.upper()
     #stocker les mots dans un ensemble
@@ -56,6 +55,7 @@ def hangman():
         mot_list =[lettre if lettre in lettre_jouees else "_" for lettre in mot]
         print("Le mot actuel est :", ' '.join(mot_list))
         lettre_choisie = input("Entrer une lettre : ").upper()
+
         if lettre_choisie in alphabet - lettre_jouees:
             lettre_jouees.add(lettre_choisie)
             if lettre_choisie in mot_lettre:
@@ -64,10 +64,12 @@ def hangman():
             else:
                 essai -= 1
                 print("il vous reste ", essai, "essai(s) encore")
+
         elif lettre_choisie in lettre_jouees:
             print("Oups vous avez deja utilise cette lettre , choisissez une lettre!")
         else:
             print("Votre choix est invalide, merci de saisir une lettre!")
+
     if essai == 0:
         print("🥴 Dommage vous avez perdu, il ne vous reste aucun essai!")
         #appel de la fonction pour essayer a nouveau

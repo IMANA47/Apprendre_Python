@@ -1,1 +1,1 @@
-mots =['ecole','voiture','maison','classe','professeur','eglise','divine','est','pharmacie','docteur']
+mots =['ecole','voiture','maison','classe','professeur','eglise','divine','est','pharmacie','docteur','jacob']
