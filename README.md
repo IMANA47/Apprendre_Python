@@ -29,17 +29,18 @@ Projet_Jeu_Pendu/
 
 ##  Lancer le jeu
 
-Assure-toi d'avoir **Python 3** installé.
+Assure-toi d'avoir **Python 3** installé et d'être  a la racine du projet.
+
 
 ```bash
-python hangman.py
+python hangman.py ou python3 hangman.py
 ```
 
 ##  Technologies utilisées
 
-- Python 3
-- Terminal / bash
-- Ubuntu 24.04 LTS comme OS
+- Python 3.12.3
+- Terminal 
+- Système d’exploitation  Ubuntu 24.04.2 LTS
 - IDE Pycharm
 
 ##  Objectif pédagogique
@@ -61,6 +62,6 @@ Ce projet a été réalisé dans le but de :
 ##  Auteur
 
 **Nsengimana François**  
-Développeur Web Mobile rendre le numerique plus simple 🚀
+Concepteur Développeur Web Mobile rendre le numerique plus simple 😎🌱
 
 ---
