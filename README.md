@@ -1,6 +1,6 @@
-#  Jeu du Pendu - Terminal Python
+#  Jeu du Pendu - Terminal Python(En cours)
 
-Bienvenue dans **mon projet de jeu du pendu**, un petit jeu classique réalisé en Python, qui se joue directement dans le terminal. Ce projet m'a permis de mettre en pratique mes compétences en logique, manipulation de chaînes de caractères, boucles,fonction, conditions et gestion des entrées utilisateur.
+Bienvenue dans **mon projet de jeu du pendu**, un petit jeu classique réalisé en Python, qui se joue directement dans le terminal. Ce projet m'a permis de mettre en pratique mes compétences en logique, manipulation de chaînes de caractères, boucles,fonction, conditions et gestion des entrées utilisateur dans le cadre de l'apprentissage du langage python.
 
 ##  Objectif du jeu
 
